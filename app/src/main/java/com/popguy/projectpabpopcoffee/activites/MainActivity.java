@@ -1,8 +1,10 @@
-package com.popguy.projectpabpopcoffee;
+package com.popguy.projectpabpopcoffee.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.popguy.projectpabpopcoffee.R;
 
 public class MainActivity extends AppCompatActivity {
 
