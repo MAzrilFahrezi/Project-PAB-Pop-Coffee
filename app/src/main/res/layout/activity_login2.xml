@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/item">
 
     <ImageView
-        android:id="@+id/blob"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:src="@drawable/blob" />
+        android:layout_height="500dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/vector" />
+
+    <ImageView
+        android:id="@+id/vektor1"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/vector1" />
 
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/blob"
+        android:layout_below="@+id/vektor1"
         android:padding="30dp">
 
         <EditText
@@ -24,6 +33,8 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppinsregular"
             android:hint="Username"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:paddingLeft="10dp"/>
 
         <EditText
@@ -34,6 +45,7 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppinsregular"
             android:hint="Password"
+            android:textColorHint="@color/white"
             android:paddingLeft="10dp"/>
     </LinearLayout>
 
@@ -42,11 +54,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:textColor="@color/black"
         android:layout_below="@id/ll1"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/green"
+        android:background="@drawable/rounded"
+        app:backgroundTint="@color/white"
         android:width="300dp"
-        android:textColor="@color/white"
         android:textSize="18sp"
         android:fontFamily="@font/poppinsbold"/>
 
@@ -63,6 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don’t have an account? "
+            android:textColor="@color/white"
             android:fontFamily="@font/poppinsregular"
             android:textSize="12sp"/>
 
@@ -72,7 +86,7 @@
             android:text="Register"
             android:fontFamily="@font/poppinsregular"
             android:textSize="12sp"
-            android:textColor="@color/green"/>
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
