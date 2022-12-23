@@ -4,14 +4,16 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="5dp"
-    app:cardBackgroundColor="@color/white">
+    android:padding="16dp"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="#878178">
     
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
-        android:background="#E9CBA7">
+        android:background="#878178"
+        android:layout_marginTop="16dp">
         
         <ImageView
             android:id="@+id/iv_gambar"
@@ -30,6 +32,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
             android:text="Nama Kopi"
+            android:textColor="@color/white"
             tools:textSize="24sp"
             android:fontFamily="@font/poppinssemibold"
             app:layout_constraintTop_toBottomOf="@id/iv_gambar"

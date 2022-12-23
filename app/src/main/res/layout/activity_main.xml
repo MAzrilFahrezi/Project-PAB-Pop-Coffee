@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,73 +11,85 @@
     tools:context=".activites.MainActivity">
 
 
-    <RelativeLayout
-        android:id="@+id/ll1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_namaUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Halo, User Pop."
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_namaUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Halo, User Pop."
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_namaUser"
+        android:textSize="17sp"
+        android:text="Mau Nambahin biji apa?"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_namaUser"/>
 
-        <TextView
-            android:id="@+id/tv_deskripsi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_namaUser"
-            android:text="Mau Nambahin biji apa?"
-            android:textColor="@color/white" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cv_user"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:src="@drawable/testdhy"
+        android:layout_marginEnd="16dp"
+        app:civ_border_color="#373737"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_search"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_deskripsi"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded"
-            android:drawableStart="@drawable/ic_search_24"
-            android:hint="Search for Anything"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            app:shapeAppearance="@style/Rounded" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_search"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_deskripsi"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded"
+        android:drawableStart="@drawable/ic_search_24"
+        android:hint="Search for Anything"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_deskripsi"
+        app:shapeAppearance="@style/Rounded" />
 
-    </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/ll2"
+    <TextView
+        android:id="@+id/tv_judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="POP COFFEE"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_kopi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ll1">
+        app:layout_constraintTop_toBottomOf="@id/tv_judul"
+        tools:itemCount="12"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/kopi_adapter"/>
 
 
-    </RelativeLayout>
-
-    <ScrollView
-        android:id="@+id/sl1"
+    <ProgressBar
+        android:id="@+id/progressbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ll2">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
 
-        <TextView
-            android:id="@+id/tv_judul"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppinsbold"
-            android:text="POP COFFEE"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-
-    </ScrollView>
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
