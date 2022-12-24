@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User_Activity"
+    android:background="@color/item">
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:src="@drawable/testdhy"
+            android:layout_marginTop="100dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_about"
+            android:layout_width="300dp"
+            android:layout_height="137dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="36dp"
+            app:cardUseCompatPadding="true"
+            android:backgroundTint="@color/abu">
+
+            <TextView
+                android:id="@+id/user1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/user"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:text="Muhammad Azril Fahrezi"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="60dp"
+                android:drawableStart="@drawable/email_24"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:text=" mazrilfahrezi@gmail.com"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:paddingStart="5dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll2"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_about1"
+            android:layout_width="300dp"
+            android:layout_height="137dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="36dp"
+            app:cardUseCompatPadding="true"
+            android:backgroundTint="@color/abu">
+
+            <TextView
+                android:id="@+id/tv_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:text="@string/about"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:width="300dp"
+        android:backgroundTint="@color/green"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Logout"
+        android:background="@drawable/rounded"
+        app:backgroundTint="@color/abu2"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
