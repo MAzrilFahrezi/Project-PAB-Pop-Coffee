@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "27453035130",
+    "project_id": "popcoffee",
+    "storage_bucket": "popcoffee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27453035130:android:107cbae8098efc8266e1c3",
+        "android_client_info": {
+          "package_name": "com.popguy.projectpabpopcoffee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27453035130-o60lt7rfp3tos1imlo7eav4r1t4g5krc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_7a3pJIK5uQXmmDZhbs2ngq-0eQZ-ABQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27453035130-o60lt7rfp3tos1imlo7eav4r1t4g5krc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -45,6 +45,7 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppinsregular"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColorHint="@color/white"
             android:paddingLeft="10dp"/>
     </LinearLayout>

@@ -55,6 +55,7 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppinsregular"
             android:hint="Create Password"
+            android:inputType="textPassword"
             android:textColorHint="@color/black"
             android:paddingLeft="10dp"/>
 
@@ -66,6 +67,7 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppinsregular"
             android:hint="Confirm Password"
+            android:inputType="textPassword"
             android:textColorHint="@color/black"
             android:paddingLeft="10dp"/>
 
