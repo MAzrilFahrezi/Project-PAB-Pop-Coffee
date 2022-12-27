@@ -17,6 +17,13 @@
             android:scaleType="fitXY"
             android:src="@drawable/atasreg" />
 
+        <ImageView
+            android:id="@+id/bawah1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitEnd"
+            android:src="@drawable/bawahreg1" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -28,31 +35,35 @@
         android:layout_marginTop="100dp">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/et_nama"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppinsregular"
-            android:hint="Username"
+            android:textColor="@color/black"
+            android:hint="Nama Lengkap"
             android:textColorHint="@color/black"
             android:paddingLeft="10dp"/>
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppinsregular"
             android:hint="Email"
+            android:inputType="textEmailAddress"
             android:textColorHint="@color/black"
             android:paddingLeft="10dp"/>
 
         <EditText
-            android:id="@+id/ctpassword"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppinsregular"
             android:hint="Create Password"
             android:inputType="textPassword"
@@ -60,11 +71,12 @@
             android:paddingLeft="10dp"/>
 
         <EditText
-            android:id="@+id/repassword"
+            android:id="@+id/et_rePassword"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppinsregular"
             android:hint="Confirm Password"
             android:inputType="textPassword"
@@ -82,23 +94,17 @@
         android:scaleType="fitEnd"
         android:src="@drawable/bawahreg" />
 
-    <ImageView
-        android:id="@+id/bawah1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitEnd"
-        android:src="@drawable/bawahreg1"/>
-
     <LinearLayout
         android:id="@+id/ll2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_below="@id/btn_login"
+        android:layout_below="@id/btn_register"
         android:layout_marginTop="20dp">
 
         <TextView
+            android:id="@+id/et_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Have an account? Login"
@@ -110,7 +116,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll1"
@@ -118,6 +124,7 @@
         android:layout_marginTop="124dp"
         android:layout_marginEnd="53dp"
         android:width="300dp"
+        android:gravity="center_horizontal"
         android:backgroundTint="@color/green"
         android:fontFamily="@font/poppinsbold"
         android:text="Register"
