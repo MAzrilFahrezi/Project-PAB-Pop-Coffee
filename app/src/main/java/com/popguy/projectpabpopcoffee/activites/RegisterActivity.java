@@ -46,8 +46,9 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String nama = binding.etNama.getText().toString();
                 String email = binding.etEmail.getText().toString();
+                String phone = binding.etNohp.getText().toString();
                 String password = binding.etPassword.getText().toString();
-                String rePassword = binding.etRePassword.getText().toString();
+
 
                 progressDialog.show();
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
