@@ -37,22 +37,32 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = binding.etEmail.getText().toString().trim();
                 String password = binding.etPassword.getText().toString().trim();
-                firebaseAuth.signInWithEmailAndPassword(email, password)
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                progressDialog.cancel();
-                                Toast.makeText(LoginActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                progressDialog.cancel();
-                                Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
+
+                if (TextUtils.isEmpty(email)) {
+                    binding.etEmail.setError("Email Harus di isi !");
+                }
+                if (TextUtils.isEmpty(password)) {
+                    binding.etPassword.setError("Password Harus di Isi !");
+                } else {
+
+                    firebaseAuth.signInWithEmailAndPassword(email, password)
+                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                @Override
+                                public void onSuccess(AuthResult authResult) {
+                                    progressDialog.cancel();
+                                    Toast.makeText(LoginActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    progressDialog.cancel();
+                                    Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                }
 
             }
         });
@@ -69,10 +79,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = binding.etEmail.getText().toString();
 
-                if (TextUtils.isEmpty(email)){
-                    binding.etEmail.setError("Email Harus di Isi");
-                }
-                else {
+                if (TextUtils.isEmpty(email)) {
+                    binding.etEmail.setError("Email Harus di Isi !");
+                } else {
 
                     progressDialog.setTitle("Sending Email");
                     progressDialog.show();

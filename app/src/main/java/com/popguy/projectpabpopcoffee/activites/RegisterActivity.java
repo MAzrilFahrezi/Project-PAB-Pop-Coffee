@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -46,33 +47,44 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String nama = binding.etNama.getText().toString();
                 String email = binding.etEmail.getText().toString();
-                String phone = binding.etNohp.getText().toString();
+                String noHp = binding.etNohp.getText().toString();
                 String password = binding.etPassword.getText().toString();
 
+                if (TextUtils.isEmpty(nama)){
+                    binding.etNama.setError("Nama Harus di Isi !");
+                }
+                if (TextUtils.isEmpty(email)){
+                    binding.etEmail.setError("Email Harus di Isi !");
+                }
+                if (TextUtils.isEmpty(noHp)){
+                    binding.etNohp.setError("Nomor Handphone Harus di Isi !");
+                }
+                if (TextUtils.isEmpty(password)){
+                    binding.etPassword.setError("Password Harus di Isi !");
+                }
+                else {
+                    progressDialog.show();
+                    firebaseAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                @Override
+                                public void onSuccess(AuthResult authResult) {
+                                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                                    progressDialog.cancel();
 
-                progressDialog.show();
-                firebaseAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                                progressDialog.cancel();
-
-                                firebaseFirestore.collection("User")
-                                        .document(FirebaseAuth.getInstance().getUid())
-                                        .set(new UserModels(nama, email));
-                                Toast.makeText(RegisterActivity.this, "Sign Up Berhasil, Silahkan Login", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                progressDialog.cancel();
-                            }
-                        });
-
-
+                                    firebaseFirestore.collection("User")
+                                            .document(FirebaseAuth.getInstance().getUid())
+                                            .set(new UserModels(nama, email, noHp));
+                                    Toast.makeText(RegisterActivity.this, "Sign Up Berhasil, Silahkan Login", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    progressDialog.cancel();
+                                }
+                            });
+                }
             }
         });
 

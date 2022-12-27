@@ -1,50 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/item"
     android:layout_gravity="center"
-    >
+    android:background="@color/item">
+
     <RelativeLayout
         android:id="@+id/rl99"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="20dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             style="@style/viewParent.headerText.NoMode"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="Here's\nyour first\n step with \n us!"
-            android:textColor="@color/white"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginLeft="15dp"
+            android:text="Here's\nyour first\nstep with\nus!"
+            android:textColor="@color/white" />
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/potoregister2"
-            android:layout_marginRight="15dp"/>
-
+            android:layout_marginRight="15dp"
+            android:src="@drawable/potoregister2" />
 
 
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_formRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="25dp"
         app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rl99"
-        app:cardCornerRadius="15dp"
-        android:layout_margin="25dp"
 
         >
+
         <RelativeLayout
+            android:id="@+id/rl1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -56,90 +59,85 @@
                 android:id="@+id/et_nama"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="15dp"
                 android:backgroundTint="@color/black"
-                android:hint="Username"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:inputType="textEmailAddress"
                 android:fontFamily="@font/poppinsregular"
+                android:hint="Nama Lengkap"
+                android:inputType="text"
                 android:paddingLeft="10dp"
-                android:layout_marginTop="15dp"/>
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_below="@+id/et_nama"
                 android:backgroundTint="@color/black"
-                android:hint="Email"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:inputType="textEmailAddress"
                 android:fontFamily="@font/poppinsregular"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
-                android:layout_below="@+id/et_nama"/>
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
             <EditText
                 android:id="@+id/et_nohp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_below="@+id/et_email"
                 android:backgroundTint="@color/black"
-                android:hint="Phone"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:inputType="textEmailAddress"
                 android:fontFamily="@font/poppinsregular"
+                android:hint="Phone"
+                android:inputType="phone"
                 android:paddingLeft="10dp"
-                android:layout_below="@+id/et_email"/>
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_below="@+id/et_nohp"
                 android:backgroundTint="@color/black"
-                android:hint="Password"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:inputType="textEmailAddress"
                 android:fontFamily="@font/poppinsregular"
+                android:hint="Password"
+                android:inputType="textPassword"
                 android:paddingLeft="10dp"
-                android:layout_below="@+id/et_nohp"/>
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <Button
                 android:id="@+id/btn_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="250dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/rounded"
-                app:backgroundTint="@color/abu2"
-                android:text="Register"
-                android:textSize="15sp"
-                android:textColor="@color/white"
                 android:layout_below="@id/et_password"
-                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                />
+                android:layout_marginBottom="10dp"
+                android:width="250dp"
+                android:background="@drawable/rounded"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="@color/abu2" />
 
             <TextView
                 android:id="@+id/et_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Have an account?Login"
-                android:textColor="@color/item"
-                android:fontFamily="@font/poppinsregular"
-                android:textSize="13sp"
                 android:layout_below="@+id/btn_register"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"/>
-
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Have an account? Login"
+                android:textColor="@color/item"
+                android:textSize="13sp" />
 
 
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

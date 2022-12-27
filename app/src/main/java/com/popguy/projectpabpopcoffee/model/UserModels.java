@@ -2,22 +2,23 @@ package com.popguy.projectpabpopcoffee.model;
 
 public class UserModels {
 
-    private String nama, email;
+    private String nama, email, noHp;
 
     public UserModels() {
     }
 
-    public UserModels(String username, String email) {
-        this.nama = username;
+    public UserModels(String nama, String email, String noHp) {
+        this.nama = nama;
         this.email = email;
+        this.noHp = noHp;
     }
 
-    public String getUsername() {
+    public String getNama() {
         return nama;
     }
 
-    public void setUsername(String username) {
-        this.nama = username;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getEmail() {
@@ -26,5 +27,13 @@ public class UserModels {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getNoHp() {
+        return noHp;
+    }
+
+    public void setNoHp(String noHp) {
+        this.noHp = noHp;
     }
 }
