@@ -5,127 +5,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activites.User_Activity"
+    android:padding="12dp"
     android:background="@color/item">
 
 
-    <LinearLayout
-        android:id="@+id/ll1"
+    <TextView
+        android:id="@+id/tv_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
+        android:text="Hi User Pop"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppinsregular"/>
 
-        <de.hdodenhof.circleimageview.CircleImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ci_user"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/testdhy"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_namaUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ci_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="36dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/abu">
+
+        <TextView
+            android:id="@+id/tv_namaUser"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:src="@drawable/testdhy"
-            android:layout_marginTop="100dp"/>
-    </LinearLayout>
+            android:layout_height="60dp"
+            android:drawableStart="@drawable/user"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            android:text="Muhmmad Azril Fahrezi"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="12sp"
+            android:gravity="center_vertical"/>
 
-    <LinearLayout
-        android:id="@+id/ll2"
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_emailUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ll1"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        app:layout_constraintTop_toBottomOf="@id/cv_namaUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="36dp"
+        app:cardUseCompatPadding="true"
+        android:backgroundTint="@color/abu">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_about"
-            android:layout_width="300dp"
-            android:layout_height="137dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="36dp"
-            app:cardUseCompatPadding="true"
-            android:backgroundTint="@color/abu">
+        <TextView
+            android:id="@+id/tv_emailuser"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableStart="@drawable/email_24"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            android:layout_marginLeft="8dp"
+            android:text="mazrilfahrezi@mhs.,dp.ac.id"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="12sp"
+            android:gravity="center_vertical"/>
 
-            <TextView
-                android:id="@+id/user1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:drawablePadding="5dp"
-                android:drawableStart="@drawable/user"
-                android:drawableTint="@color/white"
-                android:gravity="center"
-                android:text="Muhammad Azril Fahrezi"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:layout_marginTop="16dp"
-                />
+    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="60dp"
-                android:drawableStart="@drawable/email_24"
-                android:drawablePadding="5dp"
-                android:drawableTint="@color/white"
-                android:gravity="center"
-                android:text=" mazrilfahrezi@gmail.com"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:paddingStart="5dp"/>
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll3"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_noHpUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ll2"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        app:layout_constraintTop_toBottomOf="@id/cv_emailUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="36dp"
+        app:cardUseCompatPadding="true"
+        android:backgroundTint="@color/abu">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_about1"
-            android:layout_width="300dp"
-            android:layout_height="137dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="36dp"
-            app:cardUseCompatPadding="true"
-            android:backgroundTint="@color/abu">
+        <TextView
+            android:id="@+id/tv_nohp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableStart="@drawable/ic_phone_24"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            android:layout_marginLeft="8dp"
+            android:text="089999999"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="12sp"
+            android:gravity="center_vertical"/>
 
-            <TextView
-                android:id="@+id/tv_about"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:drawablePadding="5dp"
-                android:drawableTint="@color/white"
-                android:gravity="center"
-                android:text="@string/about"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:layout_marginTop="16dp"
-                />
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ll3"
-        app:layout_constraintStart_toStartOf="parent"
-        android:width="300dp"
-        android:backgroundTint="@color/green"
-        android:fontFamily="@font/poppinsbold"
-        android:text="Logout"
+        android:layout_marginBottom="90dp"
         android:background="@drawable/rounded"
+        android:text="LOGOUT"
+        android:width="300dp"
         app:backgroundTint="@color/abu2"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-
+        android:fontFamily="@font/poppinsbold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
