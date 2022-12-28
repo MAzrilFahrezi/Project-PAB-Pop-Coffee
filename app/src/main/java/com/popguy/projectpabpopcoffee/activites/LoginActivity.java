@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,6 +21,7 @@ import com.popguy.projectpabpopcoffee.databinding.ActivityLogin2Binding;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLogin2Binding binding;
+
     FirebaseAuth firebaseAuth;
     ProgressDialog progressDialog;
 
@@ -28,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLogin2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -107,4 +111,5 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
 }

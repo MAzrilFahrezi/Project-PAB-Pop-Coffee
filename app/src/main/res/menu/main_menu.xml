@@ -7,4 +7,10 @@
         android:title="refresh"
         app:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/it_tambah"
+        android:icon="@drawable/ic_add_24"
+        android:title="refresh"
+        app:showAsAction="ifRoom"/>
+
+
 </menu>
