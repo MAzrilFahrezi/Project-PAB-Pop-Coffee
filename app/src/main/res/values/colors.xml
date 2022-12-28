@@ -9,8 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#31E859</color>
     <color name="item">#373737</color>
-    <color name="abu">#4D4C4C</color>878178
+    <color name="abu">#4D4C4C</color>
     <color name="abu2">#878178</color>
+    <color name="abu3">#D9D9D9</color>
+
 
     <color name="darkTextColor">#020000</color>
     <color name="contentTextColor">#020000</color>

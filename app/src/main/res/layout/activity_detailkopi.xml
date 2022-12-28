@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.activity_detailkopi"
+    android:background="@color/abu3"
+    android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon2"
+            app:layout_constraintTop_toTopOf="@id/tv_detail"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Detail Kopi"
+            android:fontFamily="@font/poppinsextra"
+            android:textColor="@android:color/black"
+            android:textSize="19sp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_kopi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/robusta"
+        app:layout_constraintTop_toBottomOf="@id/tv_detail"
+        android:layout_marginTop="27dp"/>
+
+    <TextView
+        android:id="@+id/tv_kopi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Robusta"
+        app:layout_constraintTop_toBottomOf="@id/iv_kopi"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_asalkopi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Afrika Barat"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_kopi"
+        android:textSize="11dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppinssemibold"
+        android:layout_marginLeft="10dp"/>
+
+    <ImageView
+        android:id="@+id/iv_line"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toBottomOf="@id/tv_asalkopi"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/deskripsi"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/iv_line"
+        android:padding="8dp"
+        android:justificationMode="inter_word"/>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
