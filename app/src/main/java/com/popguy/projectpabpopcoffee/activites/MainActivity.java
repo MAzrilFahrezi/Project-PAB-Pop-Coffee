@@ -25,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.fbAddkopi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, activityTambahkopi.class));
+            }
+        });
+
 
 
     }
