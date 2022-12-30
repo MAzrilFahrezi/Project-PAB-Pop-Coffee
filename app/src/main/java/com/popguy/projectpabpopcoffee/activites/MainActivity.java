@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setUpRvDetail();
+
 
         if (!Utilities.checkValue(MainActivity.this, "xEmail")) {
             Intent intent = new Intent(this, LoginActivity.class);
@@ -83,6 +85,24 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    private void setUpRvDetail(){
+        coffeeAdapter = new CoffeeAdapter(coffeeResult, new CoffeeAdapter.OnAdapterListener() {
+            @Override
+            public void onClick(CoffeeModel.Data result) {
+                Intent intent = new Intent(MainActivity.this, activity_detailkopi.class);
+                    intent.putExtra("nama_kopi", result.getNama_kopi());
+                    intent.putExtra("asal_kopi", result.getAsal_kopi());
+                    intent.putExtra("deskripsi_kopi", result.getDeskripsi_kopi());
+                    startActivity(intent);
+            }
+        });
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
+        binding.rvKopi.setLayoutManager(layoutManager);
+        binding.rvKopi.setAdapter(coffeeAdapter);
+    }
+
 
     private void loadAdapter(List<CoffeeModel.Data> coffeeResult) {
         coffeeAdapter = new CoffeeAdapter();

@@ -36,6 +36,8 @@ public class activityTambahkopi extends AppCompatActivity {
         binding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 String namaKopi = binding.etNamakopi.getText().toString();
                 String asalKopi = binding.etAsalkopi.getText().toString();
                 String deskripsiKopi = binding.etDeskripsi.getText().toString();

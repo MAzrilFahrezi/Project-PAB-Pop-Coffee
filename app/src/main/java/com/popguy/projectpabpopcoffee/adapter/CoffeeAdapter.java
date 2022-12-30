@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -20,15 +21,21 @@ import com.popguy.projectpabpopcoffee.model.CoffeeModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.http.POST;
+
 public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHolder> {
 
     private List<CoffeeModel.Data> resultCoffee = new ArrayList<>();
-    private Context context;
     private OnAdapterListener listener;
 
     public CoffeeAdapter(){
 //        this.resultCoffee = resultCoffee;
 //        this.listener = listener;
+    }
+
+    public CoffeeAdapter(List<CoffeeModel.Data> coffeeResult, OnAdapterListener listener) {
+        this.resultCoffee = coffeeResult;
+        this.listener = listener;
     }
 
     @NonNull
@@ -43,26 +50,14 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHold
         CoffeeModel.Data result = resultCoffee.get(position);
         holder.tvNamaKopi.setText(result.getNama_kopi());
 
-        holder.cvKopi.setOnLongClickListener(new View.OnLongClickListener() {
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
-
-                AlertDialog.Builder jendelaPesan = new AlertDialog.Builder(context);
-                jendelaPesan.setMessage("Apakah Anda Yakin Ingin Menghapus Data Kopi ?");
-                jendelaPesan.setTitle("Perhatian !");
-                jendelaPesan.setCancelable(true);
-
-                jendelaPesan.setPositiveButton("hapus", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        
-                    }
-                });
-
-                return false;
+            public void onClick(View view) {
+                listener.onClick(result);
             }
         });
-
 
     }
 
@@ -93,6 +88,5 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHold
 
     public interface OnAdapterListener{
         void onClick(CoffeeModel.Data result);
-        void onHapusClick(Integer id);
     }
 }
