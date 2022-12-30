@@ -17,6 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.popguy.projectpabpopcoffee.R;
 import com.popguy.projectpabpopcoffee.databinding.ActivityLogin2Binding;
+import com.popguy.projectpabpopcoffee.retrofit.Utilities;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -55,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                                 public void onSuccess(AuthResult authResult) {
                                     progressDialog.cancel();
                                     Toast.makeText(LoginActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
+                                    Utilities.setValue(LoginActivity.this, "xEmail", email);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 }
                             })
@@ -110,6 +112,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    void saveData(String email){
+        SharedPreferences sharedPreferences = getSharedPreferences("logindata", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("logincounter", true);
+        editor.putString("usermail", email);
+        editor.apply();
     }
 
 }

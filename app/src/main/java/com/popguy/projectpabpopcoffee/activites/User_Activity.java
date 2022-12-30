@@ -17,6 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.popguy.projectpabpopcoffee.R;
 import com.popguy.projectpabpopcoffee.databinding.ActivityUserBinding;
+import com.popguy.projectpabpopcoffee.retrofit.Utilities;
 
 public class User_Activity extends AppCompatActivity {
     private ActivityUserBinding binding;
@@ -34,6 +35,7 @@ public class User_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
+                Utilities.clearUser(User_Activity.this);
                 startActivity(new Intent(User_Activity.this, LoginActivity.class));
                 Toast.makeText(User_Activity.this, "Signed Out !", Toast.LENGTH_SHORT).show();
             }

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:menu="@menu/main_menu"
     android:background="#373737"
     android:padding="16dp"
     android:paddingStart="16dp"
     android:paddingLeft="16dp"
-    tools:context=".activites.MainActivity">
+    tools:context=".activites.MainActivity"
+    tools:menu="@menu/main_menu">
 
 
     <TextView
@@ -17,8 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Halo, UserPop."
-        android:textSize="17sp"
         android:textColor="@color/white"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,36 +28,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_namaUser"
-        android:textSize="17sp"
         android:text="Mau Nambahin biji apa?"
         android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_namaUser"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_namaUser" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/cv_user"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="53dp"
         android:layout_height="53dp"
-        android:src="@drawable/testdhy"
         android:layout_marginEnd="16dp"
+        android:src="@drawable/testdhy"
         app:civ_border_color="#373737"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <com.google.android.material.textfield.TextInputEditText-->
-<!--        android:id="@+id/et_search"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--        android:layout_width="250dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_below="@id/tv_deskripsi"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/rounded"-->
-<!--        android:drawableStart="@drawable/ic_search_24"-->
-<!--        android:hint="Search for Anything"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_deskripsi"-->
-<!--        app:shapeAppearance="@style/Rounded" />-->
+    <!--    <com.google.android.material.textfield.TextInputEditText-->
+    <!--        android:id="@+id/et_search"-->
+    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+    <!--        android:layout_width="250dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_below="@id/tv_deskripsi"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:background="@drawable/rounded"-->
+    <!--        android:drawableStart="@drawable/ic_search_24"-->
+    <!--        android:hint="Search for Anything"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv_deskripsi"-->
+    <!--        app:shapeAppearance="@style/Rounded" />-->
 
 
     <TextView
@@ -70,37 +70,37 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cv_user"/>
+        app:layout_constraintTop_toBottomOf="@id/cv_user" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_kopi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@id/tv_judul"
         tools:itemCount="12"
-        android:layout_marginTop="16dp"
-        tools:listitem="@layout/kopi_adapter"/>
-
+        tools:listitem="@layout/kopi_adapter" />
 
     <ProgressBar
         android:id="@+id/progressbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fb_addkopi"
+        android:id="@+id/btn_tambah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="24dp"
-        android:src="@drawable/tambah"/>
-
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
