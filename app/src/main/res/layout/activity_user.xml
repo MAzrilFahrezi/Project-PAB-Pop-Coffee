@@ -20,6 +20,15 @@
         android:textSize="16sp"
         android:fontFamily="@font/poppinsregular"/>
 
+    <ImageView
+        android:id="@+id/ivInfo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_info_24"
+        android:layout_marginRight="8dp"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ci_user"
         android:layout_width="match_parent"

@@ -41,6 +41,13 @@ public class User_Activity extends AppCompatActivity {
             }
         });
 
+        binding.ivInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(User_Activity.this, AboutUsActivity.class));
+            }
+        });
+
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
