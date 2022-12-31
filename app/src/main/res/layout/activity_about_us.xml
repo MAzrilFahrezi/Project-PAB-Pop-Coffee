@@ -32,10 +32,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppinsmedium"
-        android:padding="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:text="pop coffee was set up to be part of a business or personal for easy list building very simple and includes a lot of content connected to the cloud so no data gets deleted randomly"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="13sp"
         app:layout_constraintTop_toBottomOf="@+id/rl189"/>
 
     <androidx.cardview.widget.CardView
