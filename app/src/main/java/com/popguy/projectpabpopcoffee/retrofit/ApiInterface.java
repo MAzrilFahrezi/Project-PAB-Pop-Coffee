@@ -30,6 +30,6 @@ public interface ApiInterface {
                                  @Field("deskripsi_kopi") String deskripsiKopi);
 
     @POST("coffee/delete/{id}")
-    @FormUrlEncoded
+//    @FormUrlEncoded
     Call<ValueNoData> deleteCoffee(@Path("id") Integer id);
 }

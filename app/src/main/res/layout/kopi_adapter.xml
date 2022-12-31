@@ -8,14 +8,14 @@
     android:padding="16dp"
     android:layout_margin="10dp"
     app:cardBackgroundColor="#878178">
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
         android:background="#878178"
         android:layout_marginTop="16dp">
-        
+
         <ImageView
             android:id="@+id/iv_gambar"
             android:layout_width="175dp"

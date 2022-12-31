@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Fadhil Saa;dat \n @fadhilsa.adat"
+                android:text="Fadhil Sa'dat \n @fadhilsa.adat"
                 android:fontFamily="@font/poppinsbold"
                 android:gravity="center"
                 android:padding="10dp"

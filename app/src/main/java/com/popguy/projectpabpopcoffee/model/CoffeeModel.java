@@ -1,10 +1,28 @@
 package com.popguy.projectpabpopcoffee.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
-public class CoffeeModel {
+public class CoffeeModel implements Parcelable {
 
     public List<Data> data;
+
+    protected CoffeeModel(Parcel in) {
+    }
+
+    public static final Creator<CoffeeModel> CREATOR = new Creator<CoffeeModel>() {
+        @Override
+        public CoffeeModel createFromParcel(Parcel in) {
+            return new CoffeeModel(in);
+        }
+
+        @Override
+        public CoffeeModel[] newArray(int size) {
+            return new CoffeeModel[size];
+        }
+    };
 
     public List<Data> getData() {
         return data;
@@ -15,6 +33,15 @@ public class CoffeeModel {
         return "CoffeeModel{" +
                 "data=" + data +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
     }
 
     public class Data {

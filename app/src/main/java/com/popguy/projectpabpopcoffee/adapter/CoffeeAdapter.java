@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 
 import androidx.annotation.NonNull;
@@ -16,26 +18,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.popguy.projectpabpopcoffee.R;
+import com.popguy.projectpabpopcoffee.activites.MainActivity;
 import com.popguy.projectpabpopcoffee.model.CoffeeModel;
+import com.popguy.projectpabpopcoffee.model.ValueNoData;
+import com.popguy.projectpabpopcoffee.retrofit.ApiService;
+
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.http.POST;
 
 public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHolder> {
 
     private List<CoffeeModel.Data> resultCoffee = new ArrayList<>();
-    private OnAdapterListener listener;
+    private OnClickListener listener;
+    private Context context;
 
-    public CoffeeAdapter(){
+    public CoffeeAdapter(Context context){
+        this.context= context;
 //        this.resultCoffee = resultCoffee;
 //        this.listener = listener;
-    }
-
-    public CoffeeAdapter(List<CoffeeModel.Data> coffeeResult, OnAdapterListener listener) {
-        this.resultCoffee = coffeeResult;
-        this.listener = listener;
     }
 
     @NonNull
@@ -50,12 +57,59 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHold
         CoffeeModel.Data result = resultCoffee.get(position);
         holder.tvNamaKopi.setText(result.getNama_kopi());
 
+        holder.cvKopi.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                AlertDialog.Builder messageWindow = new AlertDialog.Builder(context);
+                messageWindow.setMessage("Pilih perintah yang diinginkan!");
+                messageWindow.setTitle("Perhatian ! ");
+                messageWindow.setCancelable(true);
+
+                messageWindow.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        AlertDialog.Builder messageWindow = new AlertDialog.Builder(context);
+                        messageWindow.setMessage("Konfirmasi Delete");
+                        messageWindow.setTitle("Attention ! ");
+                        messageWindow.setCancelable(true);
+                        messageWindow.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                    }
+                });
+                messageWindow.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ApiService.endpointCoffee().deleteCoffee(result.getId()).enqueue(new Callback<ValueNoData>() {
+                            @Override
+                            public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
+                                Toast.makeText(context, "berhasil menghapus biji", Toast.LENGTH_SHORT).show();
+                                ((MainActivity) context).onResume();
+                            }
+
+                            @Override
+                            public void onFailure(Call<ValueNoData> call, Throwable t) {
+                                Toast.makeText(context, "gagal menghapus biji", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+                messageWindow.show();
+                return false;
+            }
+        });
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+        holder.cvKopi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onClick(result);
+                if (listener!=null){
+                    listener.onDetail(result);
+                }
             }
         });
 
@@ -86,7 +140,10 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHold
         notifyDataSetChanged();
     }
 
-    public interface OnAdapterListener{
-        void onClick(CoffeeModel.Data result);
+    public interface OnClickListener{
+        void onDetail(CoffeeModel.Data result);
+    }
+    public void setOnClickListener(OnClickListener listener){
+        this.listener = listener;
     }
 }

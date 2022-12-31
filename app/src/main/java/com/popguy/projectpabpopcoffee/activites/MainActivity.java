@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +24,8 @@ import com.popguy.projectpabpopcoffee.databinding.ActivityTambahkopiBinding;
 import com.popguy.projectpabpopcoffee.model.CoffeeModel;
 import com.popguy.projectpabpopcoffee.retrofit.ApiService;
 import com.popguy.projectpabpopcoffee.retrofit.Utilities;
+
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setUpRvDetail();
 
 
         if (!Utilities.checkValue(MainActivity.this, "xEmail")) {
@@ -86,33 +88,34 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private void setUpRvDetail(){
-        coffeeAdapter = new CoffeeAdapter(coffeeResult, new CoffeeAdapter.OnAdapterListener() {
-            @Override
-            public void onClick(CoffeeModel.Data result) {
-                Intent intent = new Intent(MainActivity.this, activity_detailkopi.class);
-                    intent.putExtra("nama_kopi", result.getNama_kopi());
-                    intent.putExtra("asal_kopi", result.getAsal_kopi());
-                    intent.putExtra("deskripsi_kopi", result.getDeskripsi_kopi());
-                    startActivity(intent);
-            }
-        });
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
-        binding.rvKopi.setLayoutManager(layoutManager);
-        binding.rvKopi.setAdapter(coffeeAdapter);
-    }
 
 
     private void loadAdapter(List<CoffeeModel.Data> coffeeResult) {
-        coffeeAdapter = new CoffeeAdapter();
+        coffeeAdapter = new CoffeeAdapter(MainActivity.this);
         binding.rvKopi.setLayoutManager(new GridLayoutManager(this, 2));
         binding.rvKopi.setAdapter(coffeeAdapter);
         coffeeAdapter.setData(coffeeResult);
+        coffeeAdapter.setOnClickListener(new CoffeeAdapter.OnClickListener() {
+            @Override
+            public void onDetail(CoffeeModel.Data coffee) {
+                gotodetail(coffee);
+
+
+            }
+        });
+    }
+
+    private void gotodetail(CoffeeModel.Data coffee) {
+
+        Intent intent = new Intent(MainActivity.this,activity_detailkopi.class);
+        intent.putExtra("asal_kopi", coffee.getAsal_kopi());
+        intent.putExtra("nama_kopi", coffee.getNama_kopi());
+        intent.putExtra("deskripsi_kopi", coffee.getDeskripsi_kopi());
+        startActivity(intent);
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         getCoffee();
     }
