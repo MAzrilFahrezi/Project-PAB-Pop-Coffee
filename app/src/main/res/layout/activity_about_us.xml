@@ -59,7 +59,7 @@
                 android:fontFamily="@font/poppinsbold"
                 android:gravity="center"
                 android:padding="10dp"
-                android:textSize="18dp"
+                android:textSize="18dp"/>
 
         </RelativeLayout>
 
@@ -87,7 +87,7 @@
                 android:fontFamily="@font/poppinsbold"
                 android:gravity="center"
                 android:padding="10dp"
-                android:textSize="18dp"
+                android:textSize="18dp"/>
 
         </RelativeLayout>
 
@@ -115,7 +115,7 @@
                 android:fontFamily="@font/poppinsbold"
                 android:gravity="center"
                 android:padding="10dp"
-                android:textSize="18dp"
+                android:textSize="18dp"/>
 
         </RelativeLayout>
 
