@@ -72,16 +72,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cv_user" />
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_kopi"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@id/tv_judul"
-        tools:itemCount="12"
-        tools:listitem="@layout/kopi_adapter" />
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_judul"
+        android:layout_marginTop="90dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_kopi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="vertical"
+                app:layout_constraintTop_toBottomOf="@id/tv_judul"
+                tools:itemCount="12"
+                tools:listitem="@layout/kopi_adapter" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -101,6 +117,6 @@
         android:contentDescription="TODO"
         android:src="@drawable/ic_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

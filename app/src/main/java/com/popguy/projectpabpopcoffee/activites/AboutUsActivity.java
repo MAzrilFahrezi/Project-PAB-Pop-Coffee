@@ -1,7 +1,6 @@
 package com.popguy.projectpabpopcoffee.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
