@@ -12,7 +12,7 @@ import android.view.View;
 import com.popguy.projectpabpopcoffee.databinding.ActivityAboutUsBinding;
 
 public class AboutUsActivity extends AppCompatActivity {
-private ActivityAboutUsBinding binding;
+    private ActivityAboutUsBinding binding;
 
 
     @Override
@@ -20,6 +20,13 @@ private ActivityAboutUsBinding binding;
         super.onCreate(savedInstanceState);
         binding = ActivityAboutUsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.ivBackk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         binding.cvpadel.setOnClickListener(new View.OnClickListener() {
             @Override

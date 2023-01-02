@@ -7,7 +7,9 @@
     tools:context=".activites.AboutUsActivity"
     android:layout_gravity="center"
     android:background="@color/item">
-    
+
+
+
     <RelativeLayout
         android:id="@+id/rl189"
         android:layout_width="match_parent"
@@ -16,6 +18,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/iv_backk"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_white"
+            app:layout_constraintTop_toTopOf="@id/tvheader"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
             android:id="@+id/tvheader"
