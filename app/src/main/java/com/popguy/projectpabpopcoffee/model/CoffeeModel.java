@@ -46,7 +46,7 @@ public class CoffeeModel implements Parcelable {
 
     public class Data {
         Integer id;
-        String nama_kopi, asal_kopi, deskripsi_kopi;
+        String nama_kopi, asal_kopi, deskripsi_kopi, gambarKopi;
 
         public Integer getId() {
             return id;
@@ -64,6 +64,9 @@ public class CoffeeModel implements Parcelable {
             return deskripsi_kopi;
         }
 
+        public String getGambarKopi() {
+            return gambarKopi;
+        }
     }
 
 }

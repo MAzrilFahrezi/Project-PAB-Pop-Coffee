@@ -56,7 +56,11 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHold
 
         CoffeeModel.Data result = resultCoffee.get(position);
         holder.tvNamaKopi.setText(result.getNama_kopi());
-
+        Glide.with(holder.itemView.getContext())
+                .load(result.getGambarKopi())
+                .placeholder(R.drawable.loading)
+                .fitCenter()
+                .into(holder.ivKopi);
         holder.cvKopi.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {

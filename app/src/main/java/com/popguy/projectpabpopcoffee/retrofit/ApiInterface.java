@@ -20,7 +20,8 @@ public interface ApiInterface {
     @FormUrlEncoded
     Call<ValueNoData> insertKopi(@Field("nama_kopi") String namaKopi,
                                @Field("asal_kopi") String asalKopi,
-                               @Field("deskripsi_kopi") String deskripsiKopi);
+                               @Field("deskripsi_kopi") String deskripsiKopi,
+                               @Field("gambarKopi") String gambarKopi);
 
     @POST("coffee/update/{id}")
     @FormUrlEncoded

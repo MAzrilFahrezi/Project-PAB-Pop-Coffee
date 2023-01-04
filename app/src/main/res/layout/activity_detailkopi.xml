@@ -32,7 +32,10 @@
         android:id="@+id/iv_kopi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/robusta"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:shapeAppreanceOverlay="@style/roundedimageview"
+        android:src="@drawable/loading"
         app:layout_constraintTop_toBottomOf="@id/tv_detail"
         android:layout_marginTop="27dp"/>
 

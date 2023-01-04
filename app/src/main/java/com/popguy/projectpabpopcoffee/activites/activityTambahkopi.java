@@ -41,8 +41,9 @@ public class activityTambahkopi extends AppCompatActivity {
                 String namaKopi = binding.etNamakopi.getText().toString();
                 String asalKopi = binding.etAsalkopi.getText().toString();
                 String deskripsiKopi = binding.etDeskripsi.getText().toString();
+                String gambarKopi = binding.etGambarKopi.getText().toString();
 
-                ApiService.endpointCoffee().insertKopi(namaKopi, asalKopi, deskripsiKopi)
+                ApiService.endpointCoffee().insertKopi(namaKopi, asalKopi, deskripsiKopi, gambarKopi)
                         .enqueue(new Callback<ValueNoData>() {
                             @Override
                             public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {

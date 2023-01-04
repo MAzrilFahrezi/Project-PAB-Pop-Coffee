@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("asal_kopi", coffee.getAsal_kopi());
         intent.putExtra("nama_kopi", coffee.getNama_kopi());
         intent.putExtra("deskripsi_kopi", coffee.getDeskripsi_kopi());
+        intent.putExtra("gambarKopi", coffee.getGambarKopi());
         startActivity(intent);
     }
 
