@@ -28,26 +28,38 @@
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageView
-        android:id="@+id/iv_kopi"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv9090"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:shapeAppreanceOverlay="@style/roundedimageview"
-        android:src="@drawable/loading"
-        app:layout_constraintTop_toBottomOf="@id/tv_detail"
-        android:layout_marginTop="27dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="10dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_kopi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/loading" />
+
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/tv_kopi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Robusta"
-        app:layout_constraintTop_toBottomOf="@id/iv_kopi"
+        app:layout_constraintTop_toBottomOf="@id/cv9090"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/poppinsbold"
         android:layout_marginLeft="10dp"/>
 
