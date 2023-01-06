@@ -20,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.popguy.projectpabpopcoffee.R;
 import com.popguy.projectpabpopcoffee.databinding.ActivityRegister2Binding;
 import com.popguy.projectpabpopcoffee.model.UserModels;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.security.Policy;
 
@@ -74,13 +75,15 @@ public class RegisterActivity extends AppCompatActivity {
                                     firebaseFirestore.collection("User")
                                             .document(FirebaseAuth.getInstance().getUid())
                                             .set(new UserModels(nama, email, noHp));
-                                    Toast.makeText(RegisterActivity.this, "Sign Up Berhasil, Silahkan Login", Toast.LENGTH_SHORT).show();
+                                    FancyToast.makeText(RegisterActivity.this,"Register Succesfull",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    FancyToast.makeText(RegisterActivity.this,"Register Failed",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
                                     progressDialog.cancel();
                                 }
                             });

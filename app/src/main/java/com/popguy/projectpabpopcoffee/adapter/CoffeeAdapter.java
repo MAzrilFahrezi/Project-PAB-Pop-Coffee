@@ -18,10 +18,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.popguy.projectpabpopcoffee.R;
+import com.popguy.projectpabpopcoffee.activites.LoginActivity;
 import com.popguy.projectpabpopcoffee.activites.MainActivity;
 import com.popguy.projectpabpopcoffee.model.CoffeeModel;
 import com.popguy.projectpabpopcoffee.model.ValueNoData;
 import com.popguy.projectpabpopcoffee.retrofit.ApiService;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import org.checkerframework.checker.units.qual.C;
 
@@ -90,13 +92,15 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHold
                         ApiService.endpointCoffee().deleteCoffee(result.getId()).enqueue(new Callback<ValueNoData>() {
                             @Override
                             public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
-                                Toast.makeText(context, "berhasil menghapus biji", Toast.LENGTH_SHORT).show();
+                                FancyToast.makeText(context,"Hapus Biji Berhasil",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+
                                 ((MainActivity) context).onResume();
                             }
 
                             @Override
                             public void onFailure(Call<ValueNoData> call, Throwable t) {
-                                Toast.makeText(context, "gagal menghapus biji", Toast.LENGTH_SHORT).show();
+                                FancyToast.makeText(context,"Hapus Biji Gagal",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
                             }
                         });
                     }

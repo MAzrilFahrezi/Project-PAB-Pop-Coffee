@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.popguy.projectpabpopcoffee.R;
 import com.popguy.projectpabpopcoffee.databinding.ActivityUserBinding;
 import com.popguy.projectpabpopcoffee.retrofit.Utilities;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class User_Activity extends AppCompatActivity {
     private ActivityUserBinding binding;
@@ -37,7 +38,7 @@ public class User_Activity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 Utilities.clearUser(User_Activity.this);
                 startActivity(new Intent(User_Activity.this, LoginActivity.class));
-                Toast.makeText(User_Activity.this, "Signed Out !", Toast.LENGTH_SHORT).show();
+                FancyToast.makeText(User_Activity.this,"Signed Out !",FancyToast.LENGTH_LONG,FancyToast.INFO,true).show();
             }
         });
 

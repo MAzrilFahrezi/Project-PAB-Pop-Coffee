@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.popguy.projectpabpopcoffee.R;
 import com.popguy.projectpabpopcoffee.databinding.ActivityLogin2Binding;
 import com.popguy.projectpabpopcoffee.retrofit.Utilities;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -55,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
                                     progressDialog.cancel();
-                                    Toast.makeText(LoginActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
+                                    FancyToast.makeText(LoginActivity.this,"Login Succesfull",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
                                     Utilities.setValue(LoginActivity.this, "xEmail", email);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 }
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     progressDialog.cancel();
-                                    Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    FancyToast.makeText(LoginActivity.this,"Login Failed",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
                                 }
                             });
 

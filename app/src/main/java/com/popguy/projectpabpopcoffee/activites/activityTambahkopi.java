@@ -12,6 +12,7 @@ import com.popguy.projectpabpopcoffee.databinding.ActivityTambahkopiBinding;
 import com.popguy.projectpabpopcoffee.model.ValueNoData;
 import com.popguy.projectpabpopcoffee.retrofit.ApiService;
 import com.popguy.projectpabpopcoffee.retrofit.Utilities;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,6 +34,8 @@ public class activityTambahkopi extends AppCompatActivity {
             }
         });
 
+        binding.progressbar.setVisibility(View.GONE);
+
         binding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,13 +50,17 @@ public class activityTambahkopi extends AppCompatActivity {
                         .enqueue(new Callback<ValueNoData>() {
                             @Override
                             public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
-                                Toast.makeText(activityTambahkopi.this, "Tambah BIJI Berhasil !", Toast.LENGTH_SHORT).show();
+                                binding.progressbar.setVisibility(View.GONE);
+                                FancyToast.makeText(activityTambahkopi.this,"Tambah Kopi Berhasil",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+
                                 finish();
                             }
 
                             @Override
                             public void onFailure(Call<ValueNoData> call, Throwable t) {
-                                Toast.makeText(activityTambahkopi.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                                binding.progressbar.setVisibility(View.GONE);
+                                FancyToast.makeText(activityTambahkopi.this,"Tambah Kopi Gagal",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
                             }
                         });
             }
