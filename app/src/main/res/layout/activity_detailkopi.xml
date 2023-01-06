@@ -39,13 +39,22 @@
         android:layout_marginBottom="20dp"
         android:padding="10dp">
 
-        <ImageView
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_kopi"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:src="@drawable/loading" />-->
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
             android:id="@+id/iv_kopi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/loading" />
+            android:src="@drawable/loading"
+            android:background="@color/colorAccent" />
 
     </androidx.cardview.widget.CardView>
 

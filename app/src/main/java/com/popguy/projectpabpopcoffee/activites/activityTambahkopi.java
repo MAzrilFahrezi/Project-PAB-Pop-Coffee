@@ -34,8 +34,6 @@ public class activityTambahkopi extends AppCompatActivity {
             }
         });
 
-        binding.progressbar.setVisibility(View.GONE);
-
         binding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +48,6 @@ public class activityTambahkopi extends AppCompatActivity {
                         .enqueue(new Callback<ValueNoData>() {
                             @Override
                             public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
-                                binding.progressbar.setVisibility(View.GONE);
                                 FancyToast.makeText(activityTambahkopi.this,"Tambah Kopi Berhasil",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
 
                                 finish();
@@ -58,7 +55,6 @@ public class activityTambahkopi extends AppCompatActivity {
 
                             @Override
                             public void onFailure(Call<ValueNoData> call, Throwable t) {
-                                binding.progressbar.setVisibility(View.GONE);
                                 FancyToast.makeText(activityTambahkopi.this,"Tambah Kopi Gagal",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
                             }
