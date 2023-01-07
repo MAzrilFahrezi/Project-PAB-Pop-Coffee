@@ -38,7 +38,6 @@ import retrofit2.Response;
 public class activityTambahkopi extends AppCompatActivity {
 
     private ActivityTambahkopiBinding binding;
-    FirebaseStorage firebaseStorage;
     ProgressDialog progressDialog;
     Uri imageUri;
     StorageReference storageReference;
