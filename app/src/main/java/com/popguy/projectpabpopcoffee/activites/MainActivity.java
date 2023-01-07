@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.popguy.projectpabpopcoffee.R;
 import com.popguy.projectpabpopcoffee.adapter.CoffeeAdapter;
@@ -37,7 +38,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "coffee";
     private ActivityMainBinding binding;
-
+    private ProgressBar progressBar;
     private CoffeeAdapter coffeeAdapter;
     private List<CoffeeModel.Data> coffeeResult = new ArrayList<>();
 
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getCoffee() {
+        showProgressbar();
         ApiService.endpointCoffee().getCoffee()
                 .enqueue(new Callback<CoffeeModel>() {
                     @Override
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, response.body().getData().get(0).getNama_kopi());
                         coffeeResult = response.body().getData();
                         loadAdapter(coffeeResult);
+                        hideProgressBar();
                     }
 
                     @Override
@@ -120,4 +123,13 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         getCoffee();
     }
+
+    private void showProgressbar(){
+        binding.progressbar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar(){
+        binding.progressbar.setVisibility(View.GONE);
+    }
+
 }

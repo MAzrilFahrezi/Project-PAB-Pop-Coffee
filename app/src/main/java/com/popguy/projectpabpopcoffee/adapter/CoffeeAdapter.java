@@ -67,7 +67,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHold
             @Override
             public boolean onLongClick(View view) {
                 AlertDialog.Builder messageWindow = new AlertDialog.Builder(context);
-                messageWindow.setMessage("Pilih perintah yang diinginkan!");
+                messageWindow.setMessage("Apakah Anda Yakin Akan Menghapus Biji Ini?!");
                 messageWindow.setTitle("Perhatian ! ");
                 messageWindow.setCancelable(true);
 
@@ -86,7 +86,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.MyViewHold
                         });
                     }
                 });
-                messageWindow.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                messageWindow.setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         ApiService.endpointCoffee().deleteCoffee(result.getId()).enqueue(new Callback<ValueNoData>() {

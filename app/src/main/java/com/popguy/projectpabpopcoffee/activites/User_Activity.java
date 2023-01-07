@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ public class User_Activity extends AppCompatActivity {
     private ActivityUserBinding binding;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
+    private ProgressBar progressBar;
     String UserId;
 
     @Override
@@ -39,6 +41,7 @@ public class User_Activity extends AppCompatActivity {
                 Utilities.clearUser(User_Activity.this);
                 startActivity(new Intent(User_Activity.this, LoginActivity.class));
                 FancyToast.makeText(User_Activity.this,"Signed Out !",FancyToast.LENGTH_LONG,FancyToast.INFO,true).show();
+                finish();
             }
         });
 
@@ -58,11 +61,23 @@ public class User_Activity extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                binding.tvNamaUser.setText(value.getString("nama"));
-                binding.tvEmailuser.setText(value.getString("email"));
-                binding.tvNohp.setText(value.getString("noHp"));
+                showProgressbar();
+                if (value != null){
+                    binding.tvNamaUser.setText(value.getString("nama"));
+                    binding.tvEmailuser.setText(value.getString("email"));
+                    binding.tvNohp.setText(value.getString("noHp"));
+                    hideProgressBar();
+                }
             }
         });
+    }
+
+    private void showProgressbar(){
+        binding.progressbar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar(){
+        binding.progressbar.setVisibility(View.GONE);
     }
 
 

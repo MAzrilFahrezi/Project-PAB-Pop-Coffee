@@ -44,21 +44,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <com.google.android.material.textfield.TextInputEditText-->
-    <!--        android:id="@+id/et_search"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--        android:layout_width="250dp"-->
-    <!--        android:layout_height="50dp"-->
-    <!--        android:layout_below="@id/tv_deskripsi"-->
-    <!--        android:layout_marginTop="16dp"-->
-    <!--        android:background="@drawable/rounded"-->
-    <!--        android:drawableStart="@drawable/ic_search_24"-->
-    <!--        android:hint="Search for Anything"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/tv_deskripsi"-->
-    <!--        app:shapeAppearance="@style/Rounded" />-->
-
 
     <TextView
         android:id="@+id/tv_judul"
