@@ -9,6 +9,15 @@
     android:background="@color/item">
 
 
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/icon_white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="12dp"/>
+
     <TextView
         android:id="@+id/tv_user"
         android:layout_width="match_parent"

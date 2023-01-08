@@ -67,8 +67,6 @@ public class activityTambahkopi extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 uploadImage();
-
-
             }
         });
 
@@ -156,6 +154,5 @@ public class activityTambahkopi extends AppCompatActivity {
             binding.btnTambahGambar.setText(returnCursor.getString(nameIndex));
         }
     }
-
 
 }
