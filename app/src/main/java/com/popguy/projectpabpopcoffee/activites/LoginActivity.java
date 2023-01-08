@@ -97,14 +97,14 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     progressDialog.cancel();
-                                    Toast.makeText(LoginActivity.this, "Reset Password Sudah Dikirimkan ke Email Anda", Toast.LENGTH_SHORT).show();
+                                    FancyToast.makeText(LoginActivity.this, "Reset Password Sudah Dikirimkan ke Email Anda", FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     progressDialog.cancel();
-                                    Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    FancyToast.makeText(LoginActivity.this, e.getMessage(), FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
                                 }
                             });
 
